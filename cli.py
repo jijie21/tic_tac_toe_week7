@@ -2,7 +2,7 @@ from logic import check_winner, get_empty_board, print_board, get_player_input, 
 from bot import Bot
 import logging
 
-
+# dependency injection implementation
 class TicTacToeGame:
     def __init__(self, mode):
         self.current_player = "X"
