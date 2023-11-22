@@ -74,6 +74,21 @@ class TestTicTacToe(unittest.TestCase):
         ]
         self.assertEqual(check_winner(board), None)
 
+    def test_play_game(self):
+        with patch('builtins.input', side_effect=['single', '0,0', '0,1', '1,1', '1,0', '2,2']):
+            game = TicTacToeGame(mode="single")
+            game.play_game()
+            self.assertIsNotNone(game.winner)
+
+    def test_get_bot_move(self):
+        bot = Bot()
+        board = [
+            ['X', 'O', 'X'],
+            ['O', None, None],
+            [None, None, 'X'],
+        ]
+        move = bot.get_bot_move(board)
+        self.assertIn(move, [(1, 1), (1, 2), (2, 0), (2, 1)])
 
 if __name__ == '__main__':
     unittest.main()
