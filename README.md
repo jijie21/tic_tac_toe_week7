@@ -1,3 +1,2 @@
 # tic_tac_toe_inclass
-Class note
-Homework finished 7 Nov2023
+Welcome to my tic-tac-toe game! Enjoy!
