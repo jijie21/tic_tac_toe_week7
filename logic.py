@@ -39,14 +39,18 @@ def print_board(board):
         print(row)
 
 
-def get_player_input(current_player):
+def get_player_input(current_player, player_move=None):
+    if player_move is not None:
+        return player_move
+
     prompt = f"Player {current_player} > \n "
     player_input = input(prompt)
-    
+
     row_col_list = player_input.split(',')
     row, col = [int(x) for x in row_col_list]
-  
+
     return row, col
+
 
 def switch_player(current_player):
     if current_player == "X":
